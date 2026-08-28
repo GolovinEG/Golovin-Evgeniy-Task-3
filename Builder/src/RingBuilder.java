@@ -1,26 +1,30 @@
-public class RingBuilder implements JewelryBuilder{
+public class RingBuilder {
     private String material;
     private String gem;
     private int size;
 
-    @Override
-    public void setMaterial(String material) {
+    public RingBuilder material(String material) {
         assert material != null : "material data is null";
         this.material = material;
+        return this;
     }
 
-    @Override
-    public void setGem(String gem) {
-        this.gem = JewelryBuilder.isNullOrBlank(gem) ? null : gem;
+    public RingBuilder gem(String gem) {
+        if (gem == null) {
+            this.gem = null;
+        } else {
+            this.gem = gem.isBlank() ? null : gem;
+        }
+        return this;
     }
 
-    @Override
-    public void setSize(Integer size) {
-        assert size != null : "size data is null";;
+    public RingBuilder size(Integer size) {
+        assert size != null : "size data is null";
         this.size = size;
+        return this;
     }
 
-    public Ring getRing() {
+    public Ring build() {
         return new Ring(material, gem, size);
     }
 }

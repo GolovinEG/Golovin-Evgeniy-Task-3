@@ -6,8 +6,12 @@ public class Ring {
     public Ring(String material, String gem, Integer size) {
         assert material != null && size != null : "Rind data missing";
         this.material = material;
-        this.gem = gem;
         this.size = size;
+        if (gem == null) {
+            this.gem = null;
+        } else {
+            this.gem = gem.isBlank() ? null : gem;
+        }
     }
 
     public String getMaterial() {
@@ -20,6 +24,10 @@ public class Ring {
 
     public int getSize() {
         return size;
+    }
+
+    static public RingBuilder builder() {
+        return new RingBuilder();
     }
 
     @Override

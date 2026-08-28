@@ -1,4 +1,8 @@
-public class XmlToRing implements DataToRing{
+public class XmlToRing implements DataToRing {
+    private static final String RING_OPEN = "<ring>";
+    private static final String RING_CLOSE = "</ring>";
+    private static final String MATERIAL = "material";
+    private static final String GEM = "gem";
     private final DataToRing nextHandler;
 
     public XmlToRing() {
@@ -14,9 +18,9 @@ public class XmlToRing implements DataToRing{
     public Ring getRing(String data) {
         assert data != null : "Request data is null";
         data = data.trim();
-        if (data.startsWith("<ring>") && data.endsWith("</ring>")) {
-            final String material = readXmlStringValue(data, "material");
-            final String gem = readXmlStringValue(data, "gem");
+        if (data.startsWith(RING_OPEN) && data.endsWith(RING_CLOSE)) {
+            final String material = readXmlStringValue(data, MATERIAL);
+            final String gem = readXmlStringValue(data, GEM);
             return new Ring(material, gem);
         } else {
             if (nextHandler == null) {

@@ -1,4 +1,4 @@
-public class DirectNode implements TextNode{
+public class DirectNode implements TextNode {
     private final String text;
 
     public DirectNode(String text) {

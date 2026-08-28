@@ -1,4 +1,4 @@
-public class ProxyNode implements TextNode{
+public class ProxyNode implements TextNode {
     private final TextNode directNode;
 
     public ProxyNode(String text) {

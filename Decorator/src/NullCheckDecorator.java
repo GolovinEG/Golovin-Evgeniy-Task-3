@@ -1,4 +1,4 @@
-public class NullCheckDecorator extends PrinterDecorator{
+public class NullCheckDecorator extends PrinterDecorator {
     public NullCheckDecorator(Printer decoratedPrinter) {
         assert decoratedPrinter != null : "Assertion error in a constructor";
         this.decoratedPrinter = decoratedPrinter;

@@ -1,8 +1,8 @@
-public class AdaptCalculator implements NewCalculator{
+public class AdaptCalculator implements NewCalculator {
     private final OldCalculator oldCalculator;
 
     public AdaptCalculator(OldCalculator oldCalculator) {
-        assert  oldCalculator != null : "Argument oldCalculator is null";
+        assert oldCalculator != null : "Argument oldCalculator is null";
         this.oldCalculator = oldCalculator;
     }
 

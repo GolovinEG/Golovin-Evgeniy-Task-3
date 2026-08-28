@@ -1,4 +1,4 @@
-public class SpaceTrimDecorator extends PrinterDecorator{
+public class SpaceTrimDecorator extends PrinterDecorator {
     public SpaceTrimDecorator(Printer decoratedPrinter) {
         assert decoratedPrinter != null : "Assertion error in a constructor";
         this.decoratedPrinter = decoratedPrinter;

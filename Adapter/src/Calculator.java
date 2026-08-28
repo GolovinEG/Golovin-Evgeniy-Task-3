@@ -1,4 +1,4 @@
-public class Calculator implements NewCalculator{
+public class Calculator implements NewCalculator {
     @Override
     public int sum(int... vals) {
         int sum = 0;

@@ -1,4 +1,4 @@
-public class SentenceCaseDecorator extends PrinterDecorator{
+public class SentenceCaseDecorator extends PrinterDecorator {
     private static final String ENDS = ".!?";
     private static final String LETTERS = "abcdefghijklmnopqrstvuwxyz";
 

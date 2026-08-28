@@ -1,5 +1,7 @@
-public class JsonToRing implements DataToRing{
+public class JsonToRing implements DataToRing {
     private final DataToRing nextHandler;
+    private static final String MATERIAL = "material";
+    private static final String GEM = "gem";
 
     public JsonToRing() {
         this.nextHandler = null;
@@ -15,8 +17,8 @@ public class JsonToRing implements DataToRing{
         assert data != null : "Request data is null";
         data = data.trim();
         if (data.startsWith("{") && data.endsWith("}")) {
-            final String material = readJsonStringValue(data, "material");
-            final String gem = readJsonStringValue(data, "gem");
+            final String material = readJsonStringValue(data, MATERIAL);
+            final String gem = readJsonStringValue(data, GEM);
             return new Ring(material, gem);
         } else {
             if (nextHandler == null) {

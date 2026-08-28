@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class SplitterBySentence implements TextSplitter{
+public class SplitterBySentence implements TextSplitter {
     @Override
     public List<String> split(String text) {
         assert text != null : "text is null";

@@ -1,4 +1,4 @@
-public class TextToRing implements DataToRing{
+public class TextToRing implements DataToRing {
     private final DataToRing nextHandler;
 
     public TextToRing() {
